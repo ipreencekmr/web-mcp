@@ -2,6 +2,8 @@
 
 A small, dependency-free todo app that demonstrates exposing app actions as WebMCP tools. It includes a built-in inspector for viewing registered tools and calling them with JSON arguments.
 
+<img width="524" height="749" alt="Screenshot 2026-10-19 at 11 12 29 AM" src="https://github.com/user-attachments/assets/755c5926-2dd3-43ea-8f56-a85505b40ad5" />
+
 ## Run locally
 
 Serve the project directory over HTTP (rather than opening the HTML file directly):
