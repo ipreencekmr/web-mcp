@@ -4,6 +4,11 @@ A small, dependency-free todo app that demonstrates exposing app actions as WebM
 
 <img width="524" height="749" alt="Screenshot 2026-10-19 at 11 12 29 AM" src="https://github.com/user-attachments/assets/755c5926-2dd3-43ea-8f56-a85505b40ad5" />
 
+<img width="749" height="96" alt="Screenshot 2026-10-19 at 11 18 48 AM" src="https://github.com/user-attachments/assets/70f0fc89-d8b2-4fca-87d8-9b419589365f" />
+
+<img width="1510" height="744" alt="Screenshot 2026-10-19 at 11 20 35 AM" src="https://github.com/user-attachments/assets/0b91b175-562d-4131-a778-104779b2716c" />
+
+
 ## Run locally
 
 Serve the project directory over HTTP (rather than opening the HTML file directly):
