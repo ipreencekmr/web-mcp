@@ -1,0 +1,230 @@
+:root {
+  color-scheme: light dark;
+  --page-background: #f5f7fa;
+  --surface-background: #fff;
+  --text-color: #202631;
+  --muted-color: #5e6876;
+  --border-color: #d6dce5;
+  --accent-color: #245ac7;
+  --accent-text: #fff;
+  --code-background: #f0f3f7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page-background: #171b22;
+    --surface-background: #202630;
+    --text-color: #edf1f7;
+    --muted-color: #aab4c2;
+    --border-color: #394352;
+    --accent-color: #78a4ff;
+    --accent-text: #101827;
+    --code-background: #181e27;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: var(--page-background);
+  color: var(--text-color);
+  font: 15px/1.5 system-ui, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  padding: 7px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  background: var(--accent-color);
+  color: var(--accent-text);
+  cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.demo-layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.demo-header,
+.api-status {
+  grid-column: 1 / -1;
+}
+
+.demo-header h1,
+.demo-header p,
+.panel h2,
+.panel h3 {
+  margin: 0;
+}
+
+.demo-header p {
+  margin-top: 4px;
+  color: var(--muted-color);
+}
+
+.api-status {
+  min-height: 36px;
+  margin: 0;
+  padding: 7px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  color: var(--muted-color);
+  font-size: 13px;
+}
+
+.panel {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--surface-background);
+}
+
+.panel h2 {
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+
+.panel h3 {
+  margin: 14px 0 6px;
+  font-size: 14px;
+}
+
+.todo-form,
+.control-row {
+  display: flex;
+  gap: 8px;
+}
+
+.todo-form input,
+.tool-call-form select,
+.tool-call-form textarea {
+  min-width: 0;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+  background: var(--page-background);
+}
+
+.todo-form input {
+  flex: 1;
+  padding: 7px 9px;
+}
+
+.todo-list {
+  margin: 12px 0 0;
+  padding-left: 22px;
+}
+
+.todo-list li + li {
+  margin-top: 4px;
+}
+
+.todo-list .is-complete {
+  color: var(--muted-color);
+  text-decoration: line-through;
+}
+
+.tool-list {
+  display: grid;
+  gap: 8px;
+}
+
+.tool-card {
+  padding: 9px;
+  border: 1px solid var(--border-color);
+  border-radius: 5px;
+}
+
+.tool-card h3 {
+  margin: 0;
+  color: var(--accent-color);
+  font-size: 14px;
+}
+
+.tool-card p {
+  margin: 3px 0 0;
+  color: var(--muted-color);
+}
+
+.tool-call-form {
+  display: grid;
+  gap: 6px;
+  margin-top: 14px;
+}
+
+.control-row select {
+  flex: 1;
+  padding: 7px 9px;
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--accent-color);
+}
+
+.tool-call-form textarea {
+  width: 100%;
+  padding: 8px;
+  resize: vertical;
+}
+
+.call-log,
+.tool-card pre {
+  margin: 0;
+  padding: 9px;
+  overflow: auto;
+  border-radius: 5px;
+  background: var(--code-background);
+  font-size: 12px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 16px;
+  }
+
+  .demo-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-header,
+  .api-status {
+    grid-column: auto;
+  }
+}

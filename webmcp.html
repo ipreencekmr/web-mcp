@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A small todo app that demonstrates registering and calling WebMCP tools.">
+  <title>WebMCP Todo Demo</title>
+  <link rel="stylesheet" href="webmcp-demo.css">
+</head>
+<body>
+  <main class="demo-layout">
+    <header class="demo-header">
+      <h1>WebMCP todo demo</h1>
+      <p>A todo app that exposes its actions as tools for AI agents.</p>
+    </header>
+
+    <p class="api-status" id="apiStatus" role="status" aria-live="polite"></p>
+
+    <section class="panel" aria-labelledby="todoHeading">
+      <h2 id="todoHeading">Todo app</h2>
+      <form class="todo-form" id="todoForm">
+        <label class="visually-hidden" for="todoInput">New todo</label>
+        <input type="text" id="todoInput" name="todo" placeholder="Add a todo..." required>
+        <button type="submit">Add todo</button>
+      </form>
+      <ul class="todo-list" id="todoList" aria-live="polite"></ul>
+    </section>
+
+    <section class="panel" aria-labelledby="inspectorHeading">
+      <h2 id="inspectorHeading">WebMCP tool inspector</h2>
+      <div class="tool-list" id="toolList" aria-label="Registered tools"></div>
+
+      <form class="tool-call-form" id="toolCallForm">
+        <label for="toolSelect">Tool</label>
+        <div class="control-row">
+          <select id="toolSelect" name="tool"></select>
+          <button class="button-secondary" type="submit">Call tool</button>
+        </div>
+        <label for="toolArguments">Arguments (JSON)</label>
+        <textarea id="toolArguments" name="arguments" rows="4" spellcheck="false">{}</textarea>
+      </form>
+
+      <h3>Call result</h3>
+      <pre class="call-log" id="callLog" aria-live="polite">Tool results will appear here.</pre>
+    </section>
+  </main>
+
+  <script src="scripts/todo-app.js"></script>
+  <script src="scripts/webmcp-tools.js"></script>
+  <script src="scripts/tool-inspector.js"></script>
+</body>
+</html>
